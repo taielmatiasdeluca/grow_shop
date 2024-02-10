@@ -1,3 +1,14 @@
 :root{
     
 }
+
+@font-face {
+    font-family: "Inter";
+    src: url('../fonts/static/inter/Inter-Regular.ttf');
+}
+@font-face {
+    font-family: "Inter";
+    font-weight: bold;
+    src: url('../fonts/static/inter/Inter-Bold.ttf');
+}
+

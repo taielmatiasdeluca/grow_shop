@@ -1,11 +1,30 @@
-import { Slider } from "../Slider"
+import './landing.css';
+
+import { Slider } from "./Slider"
+import {useFetch} from '../hooks/useFetch';
+
+//Custom Components
+import { ProductGrid } from '../ProductGrid';
+//Context
+import { GrowContext } from '../growContext';
+import { useContext } from "react";
 
 function Landing(props){
+  const {
+    apiUrl  
+  } = useContext(GrowContext);
 
-
+  const {data:productos_portada} = useFetch(`${apiUrl}producto/getPortade`);
+  const {data:productos_destacados} = useFetch(`${apiUrl}producto/get`);
 
     return <div id="landing">
-      <Slider />
+      <div id="slider_container">
+        {productos_portada && <Slider productos={productos_portada} />}
+      </div>
+      <div id="landing_products">
+        <h2 className='subtitle'>Productos Destacados</h2>
+        {productos_destacados && <ProductGrid productos={productos_destacados}/>}
+      </div>
      
     </div>
 

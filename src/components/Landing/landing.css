@@ -1,0 +1,10 @@
+#slider_container{
+    height:60vh;
+}
+
+.subtitle{
+    font-family: Inter;
+    font-weight: bold;
+    text-align: center;
+    color:#00352F;
+}
