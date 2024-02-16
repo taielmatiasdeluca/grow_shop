@@ -2,8 +2,17 @@ import './comprar.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useCart } from "react-use-cart";
-import {useState } from 'react'
+
+//Context
+import { GrowContext } from '../growContext';
+import { useContext, useState } from "react";
+
 function Comprar(){
+    const {
+        apiUrl
+    } = useContext(GrowContext);
+
+
     const {
         totalUniqueItems,
         totalItems,
@@ -14,20 +23,32 @@ function Comprar(){
     } = useCart();
 
     const [formData, setFormData] = useState({
-        
-        cantProducts:5,
-        products:[],
-        nombre: "string",
-        email: "string",
-        telefono: false,
+        products:items.map(item =>{return{'token':item.id,'quantity':item.quantity}}),
+        nombre: "",
+        email: "",
+        telefono: "",
     });
+
+
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((prevState) => ({ ...prevState, [name]: value }));
+    };
 
 
     function handleSubmit(e){
         e.preventDefault();
+        fetch(`${apiUrl}/pedido/new`,{
+            method:'PUT',
+            body:JSON.stringify(formData)
+        }).then(response=>{
+            response.json().then(data=>{
+                console.log(data);
+            })
+        })
     }
 
-    console.log(items)
 
     return(
     <div id="comprar">
@@ -37,15 +58,15 @@ function Comprar(){
         <Form>
             <Form.Group className="mb-3" controlId="formGroupEmail">
                 <Form.Label>Nombre y Apellido</Form.Label>
-                <Form.Control type="text" placeholder="Ingresa tu nombre" />
+                <Form.Control type="text" name="nombre" value={formData.nombre} onChange={handleChange} placeholder="Ingresa tu nombre" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Ingresa tu email" />
+                <Form.Control name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Ingresa tu email" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
                 <Form.Label>Telefono</Form.Label>
-                <Form.Control type="tel" placeholder="Ingresa tu telefono" />
+                <Form.Control name="telefono" value={formData.telefono} onChange={handleChange} type="tel" placeholder="Ingresa tu telefono" />
             </Form.Group>
         </Form>
 

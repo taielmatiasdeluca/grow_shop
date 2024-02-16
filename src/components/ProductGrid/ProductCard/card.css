@@ -1,12 +1,12 @@
 .product_card{
     font-family: Inter;
     width:200px;
-    height:360px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    border-radius: 15px;
 
 
     &:hover{
@@ -15,31 +15,27 @@
 
     & .image_container{
         width:100%;
-        height: 75%;
         display: flex;
         justify-content: center;
         & img{
-            height:100%;
+
+            width:100%;
+            height:200px;
             
         }
     }
 
     & .info{
         padding:1rem .5rem;
-        display: flex;
-        flex-direction: column;
-        
-
+        text-align: center;
         & .title{
             width:100%;
-
             font-weight: bold;
             white-space: unset;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-    }
-}
+        & .price{ font-size: 1.2rem; } } }
 @media (max-width: 599px) {
     .product_card{
         width:48%;

@@ -71,6 +71,7 @@ function Producto(){
                     <button onClick={()=>{
                         if(!inCart(data.info.token)){
                             addItem({'id':data.info.token,'name':data.info.titulo,'price':data.info.precio,'img':data.info.img,quantity:quantity});
+                            openCart();
                             return;
                         }
                         let resp = getItem(data.info.token).quantity;

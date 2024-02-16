@@ -19,8 +19,8 @@ function ProductCard({product}){
             <img src={`${apiUrl}${product.img}`} alt="" />
         </div>
         <div className="info">
-            <div className="price">${product.precio}</div>
             <div className="title">{product.titulo}</div>
+            <div className="price">${product.precio}</div>
         </div>
     </div>
     )
