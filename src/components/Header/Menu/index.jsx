@@ -28,7 +28,7 @@ function Menu(props){
                     <IoMdClose onClick={closeMenu} />
                 </div>
                 <div className="searcher_container">
-                    <input type="text" placeholder='Ingrese productos' />
+                    <input type="text" placeholder='Buscar...' />
                 </div>
                 <div className="categoria_list">
                     {categorias?.map(categoria=>(<div className="categoria" key={categoria.idCategoria} onClick={()=>{

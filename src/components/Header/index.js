@@ -24,7 +24,7 @@ function Header(props){
 
             <GiHamburgerMenu onClick={openMenu} color='#ffffff'/>
             <div id='logo' onClick={()=>{navigate('/')}}>
-                Hola soy logo
+                GrowShop
             </div>
 
             <IoMdCart onClick={openCart} color='#ffffff' />

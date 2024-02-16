@@ -12,6 +12,7 @@ function GrowProvider({ children }) {
 
   const [menu,setMenu] = useState(false)
   const [cart,setCart] = useState(false)
+  const [loader,setLoader] = useState(false)
 
   function openMenu(){
     setMenu(true);
@@ -24,6 +25,13 @@ function GrowProvider({ children }) {
   }
   function closeCart(){
     setCart(false);
+  }
+  function openLoader(){
+    setLoader(true);
+
+  }
+  function closeLoader(){
+    setLoader(false);
   }
 
 
@@ -46,7 +54,13 @@ function GrowProvider({ children }) {
       cart,
       openCart,
       closeCart,
+
+      loader,
+      openLoader,
+      closeLoader,
+
       categorias,
+
     }}>
       {children}
     </GrowContext.Provider>

@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Context
 import { GrowContext } from './components/growContext';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+
 
 //React Imports
 import { Landing } from "./components/Landing";
@@ -19,38 +20,40 @@ import { Menu } from "./components/Header/Menu";
 import { Cart } from "./components/Header/Cart";
 
 
-
 import { Categoria } from "./components/Categoria";
 import { Producto } from "./components/Producto";
 import { Comprar } from "./components/Comprar";
+import { Loader } from "./components/Loader";
 
 function App() {
   const {
     menu ,
     cart,
-    apiUrl
+    apiUrl,
+    loader,
+    openLoader,
   } = useContext(GrowContext);
 
-  return (
+  const location = useLocation();
+  useEffect(()=>{
+    openLoader();
+  },[location])
 
-    <BrowserRouter basename="grow/" >
-      <Header  />
+  return (
+    <>
+      {loader && <Loader/>}
+
       {menu && <Menu/>}
       {cart && <Cart/>}
-      
-      
-      <Routes  >
-        <Route exact  path="" element={<Landing />} />
-        <Route exact  path="comprar" element={<Comprar />} />
-        <Route exact  path="categoria/:idCategoria" element={<Categoria />} />
-        <Route exact  path="producto/:token" element={<Producto />} />
-        <Route  path="*" element={<NotFound />} />
-    
-        
-        
-
-      </Routes>
-    </BrowserRouter>
+      <Header  />
+        <Routes  >
+          <Route exact  path="" element={<Landing />} />
+          <Route exact  path="comprar" element={<Comprar />} />
+          <Route exact  path="categoria/:idCategoria" element={<Categoria />} />
+          <Route exact  path="producto/:token" element={<Producto />} />
+          <Route  path="*" element={<NotFound />} />
+        </Routes>
+  </>  
   );
 }
 

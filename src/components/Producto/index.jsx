@@ -13,6 +13,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 //Context
 import { GrowContext } from '../growContext';
 import { useContext, useState } from "react";
+
 import { useParams } from "react-router-dom";
 
 function Producto(){
@@ -21,6 +22,7 @@ function Producto(){
     const { 
         addItem,
         inCart,
+        items,
         updateItemQuantity,
         getItem
      } = useCart();
@@ -30,11 +32,17 @@ function Producto(){
     const {
         apiUrl,
         openCart,
+        closeLoader
     } = useContext(GrowContext);
 
 
 
     const { data } = useFetch(`${apiUrl}producto/getProduct/${token}`)
+
+    if(data ){
+        closeLoader();
+    }
+
 
 
     return <PhotoProvider>
@@ -70,7 +78,12 @@ function Producto(){
                     <QuantityControl value={quantity} setValue={setQuantity} />
                     <button onClick={()=>{
                         if(!inCart(data.info.token)){
-                            addItem({'id':data.info.token,'name':data.info.titulo,'price':data.info.precio,'img':data.info.img,quantity:quantity});
+                            addItem({
+                                id:data.info.token,
+                                name:data.info.titulo,
+                                price:data.info.precio,
+                                img:data.info.img,
+                            },quantity);
                             openCart();
                             return;
                         }

@@ -7,7 +7,7 @@ function QuantityControl({value,setValue}){
     return (
         <div className="quantity_control">
             <div className="button">
-                <FaPlus onClick={()=>{setValue(value+1)}}/>
+                <FaMinus className='icon' onClick={()=>{if(value > 1) setValue(value-1);}}/>
             </div>
             <input type="number" value={value} onChange={(e)=>{
                 let num = e.target.value;
@@ -17,8 +17,9 @@ function QuantityControl({value,setValue}){
                 }
             }} />
             <div className="button">
-                <FaMinus onClick={()=>{if(value > 1) setValue(value-1);}}/>
+                <FaPlus className='icon' onClick={()=>{setValue(value+1)}}/>
             </div>
+          
 
         </div>
     );

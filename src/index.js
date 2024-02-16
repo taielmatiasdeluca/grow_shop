@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { GrowProvider } from './components/growContext';
 import { Cart } from './components/Header/Cart';
 import { CartProvider } from "react-use-cart";
-
+import {BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
@@ -13,7 +13,9 @@ root.render(
   
     <GrowProvider>
       <CartProvider>
-        <App />
+        <BrowserRouter basename="grow/" >
+          <App />
+        </BrowserRouter>  
       </CartProvider>
     </GrowProvider>
   </React.StrictMode>

@@ -26,6 +26,7 @@
 
         & input{
             all:unset;
+            width:100%;
             background-color: #FFFFFF;
             padding:.5rem;
             border-radius: 15px;

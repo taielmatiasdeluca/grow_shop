@@ -9,7 +9,8 @@ import { useContext, useState } from "react";
 
 function Comprar(){
     const {
-        apiUrl
+        apiUrl,
+        closeLoader,
     } = useContext(GrowContext);
 
 
@@ -21,6 +22,8 @@ function Comprar(){
         removeItem,
         cartTotal
     } = useCart();
+
+    closeLoader();
 
     const [formData, setFormData] = useState({
         products:items.map(item =>{return{'token':item.id,'quantity':item.quantity}}),

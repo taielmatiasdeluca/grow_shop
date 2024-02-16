@@ -26,7 +26,8 @@ const dateOptions = [
 function Categoria(){
     const {
         apiUrl,
-        categorias
+        categorias,
+        closeLoader,
     } = useContext(GrowContext);
 
     const [filtros,setFiltros] = useState();
@@ -35,11 +36,15 @@ function Categoria(){
 
     const {idCategoria} = useParams();
 
+    
+    
     const {data:categoria} = useFetch(`${apiUrl}/categoria/getCategory/${idCategoria}`);
     const {data:productos} = useFetch(`${apiUrl}/categoria/getCategoryProductos/${idCategoria}`);
+    
+    if(categoria && productos){
+        closeLoader();
+    }
 
-
-    console.log(filtros)
 
     return <div id="categoria">
         <h1>{categoria?.name}</h1>
