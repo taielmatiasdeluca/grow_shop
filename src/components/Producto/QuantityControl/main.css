@@ -1,0 +1,22 @@
+.quantity_control{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: fit-content;
+    align-items: center;
+    & .button{
+        padding: 1rem;
+
+
+    }
+    & input{
+        all:unset;
+        -webkit-appearance: none;
+        margin: 0;
+        -moz-appearance: textfield;
+        width: 25px;
+        font-size: 1.3rem;
+        display: flex;
+        text-align: center;
+    }
+}

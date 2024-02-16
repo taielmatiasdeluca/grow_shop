@@ -1,0 +1,55 @@
+#comprar{
+    padding:1rem;
+
+    & .details{
+        padding:.5rem;
+        
+
+      & .items_container{
+        padding-bottom:.5rem;
+        
+      }
+    }
+
+    & .controls{
+      padding:1rem 0;
+
+      & .buttons_container{
+        display:flex;
+        width: 100%;
+        gap:.5rem;
+        & button{
+          flex-grow: 1;
+          &.btn_comprar{
+            background-color: #00352F;
+          }
+        }
+      }
+    }
+
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: #00352F;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #00352f34;
+  outline: 0 none;
+}
+
+body{
+ 
+}

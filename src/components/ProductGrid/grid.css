@@ -1,11 +1,19 @@
 .product_grid{
     width:100%;
     display:flex;
-    padding:1rem;
+    padding:5px;
     justify-content: center;
     flex-wrap: wrap;
-    gap:1rem;
-
+    gap:.5rem;
+  
+    
 
     
+}
+
+@media (min-width: 600px) {
+    .product_grid{
+        padding: 0 10%;
+    }
+
 }

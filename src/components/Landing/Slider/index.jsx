@@ -21,7 +21,7 @@ function Slider({productos}){
       {productos.map(product => {
         number += 1;
         return (
-            <MDBCarouselItem itemId={number}  onClick={()=>{navigate(`/product/${product.token}`)}}>
+            <MDBCarouselItem itemId={number}  onClick={()=>{navigate(`/producto/${product.token}`)}}>
               <img src={`${apiUrl}${product.image}`}  className='d-block w-100 image_slider_portade' alt='...' />
             </MDBCarouselItem>
         )}

@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { GrowProvider } from './components/growContext';
+import { Cart } from './components/Header/Cart';
+import { CartProvider } from "react-use-cart";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  
   <React.StrictMode>
+  
     <GrowProvider>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>
     </GrowProvider>
   </React.StrictMode>
 );

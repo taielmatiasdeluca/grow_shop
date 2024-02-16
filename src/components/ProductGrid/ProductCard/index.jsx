@@ -14,13 +14,13 @@ function ProductCard({product}){
     const navigate = useNavigate();
 
     return (
-    <div className='product_card' onClick={()=>{navigate(`/product/${product.token}`)}}>
+    <div className='product_card' onClick={()=>{navigate(`/producto/${product.token}`)}}>
         <div className="image_container">
             <img src={`${apiUrl}${product.img}`} alt="" />
         </div>
         <div className="info">
-            <div className="title">{product.titulo}</div>
             <div className="price">${product.precio}</div>
+            <div className="title">{product.titulo}</div>
         </div>
     </div>
     )

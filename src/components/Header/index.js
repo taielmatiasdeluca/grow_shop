@@ -1,27 +1,37 @@
 import './header.css';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdCart } from "react-icons/io";
+//Context
+import { GrowContext } from '../growContext';
+import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
+
+
 function Header(props){
+    const navigate = useNavigate();
+    const {
+        openMenu,
+        openCart
+    } = useContext(GrowContext);
 
-    function handleMenu(){
-        console.log('Hola soy menu')
-    }
 
-    function handleCart(){
-
-    }
+ 
 
     
-    return <header>
-        <GiHamburgerMenu onClick={handleMenu} color='#ffffff'/>
-        <div id='logo'>
-            Hola soy logo
-        </div>
+    return (
+  
+        <header>
 
-        <IoMdCart onClick={handleCart} color='#ffffff' />
-        
+            <GiHamburgerMenu onClick={openMenu} color='#ffffff'/>
+            <div id='logo' onClick={()=>{navigate('/')}}>
+                Hola soy logo
+            </div>
 
-    </header>
+            <IoMdCart onClick={openCart} color='#ffffff' />
+        </header>
+  
+
+    )
 }
 
 export {Header}

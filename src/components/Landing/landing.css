@@ -1,10 +1,40 @@
 #slider_container{
-    height:60vh;
 }
 
+.carousel-indicators{
+    display: none;
+}
 .subtitle{
     font-family: Inter;
     font-weight: bold;
     text-align: center;
     color:#00352F;
 }
+@media (min-width: 600px) {
+    #slider_container{
+        padding: 0 15%;
+        height: 400px;
+
+
+    }
+    
+}   
+#slider_container{
+    height: 400px;
+
+    & .carousel-item{
+        height:400px;
+        display: flex;
+        justify-content: center;
+
+        & .image_slider_portade{
+            display: flex;
+            height:100%;
+            
+            width:auto !important;
+        }
+    }
+
+   
+}
+

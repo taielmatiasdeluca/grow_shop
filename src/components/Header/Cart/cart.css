@@ -1,0 +1,132 @@
+#cart{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height:100%;
+    width:100%;
+    background-color: #F2F2F2;
+
+    z-index: 999;
+
+    & header{
+        justify-content: flex-start;
+        gap:1rem;
+        color:#FFFFFF;
+
+
+        & h2{
+            margin:0;
+            font-weight:normal;
+        }
+    }
+
+    & .finish{
+        display:flex;
+        flex-direction: column;
+        padding:1rem;
+
+        & .information{
+            display: flex;
+            font-size: 1.5rem;
+            color:#00352F;
+            font-weight: bold;
+            justify-content: space-between;
+        }
+
+        & .button_container{
+            display:flex;
+            padding:1rem;
+            flex-direction: column;
+            align-items: center;
+            gap:.5rem;
+
+            & .more{
+                font-size: 1.3rem;
+                text-decoration: underline;
+            }
+            
+            & button{
+                all:unset;
+                color:white;
+                font-weight: bold;
+                font-size: 1.3rem;
+                display: flex;
+                justify-content: center;
+                width:100%;
+                border-radius: 30px;
+
+                background-color: #00352F;
+                padding:1rem;
+            }
+        }
+    }
+
+
+    & .product_list{
+        display: flex;
+        flex-direction: column;
+        padding:1rem .5rem;
+        gap:.5rem;
+
+        & .product{
+            display:flex;
+            gap:1rem;
+
+            & .info{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width:100%;
+                & .title{
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    display: flex;
+                    justify-content: space-between;
+
+                    & span{
+                        font-size: 0.8rem;
+                        font-weight: lighter;
+                        color:rgba(246, 83, 83, 0.49);
+
+                        &:hover{
+                            color:rgba(246, 83, 83, 0.85);
+
+                        }
+                    }
+                }
+
+                & .controls{
+                    display:flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    & .quantity{
+                        & .quantity_control{
+                            & .button{
+                                padding: .5rem 1rem;
+                            }
+                        }
+                        
+                    }
+
+                    & .price{
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            & .image_container{
+                width:175px;
+                
+                & img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+
+}

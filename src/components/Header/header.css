@@ -1,4 +1,6 @@
 header{
+    position: static;
+    width: 100%;
     display:flex;
     justify-content: space-between;
     padding:.5rem;
