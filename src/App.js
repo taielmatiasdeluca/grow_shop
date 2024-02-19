@@ -24,6 +24,7 @@ import { Categoria } from "./components/Categoria";
 import { Producto } from "./components/Producto";
 import { Comprar } from "./components/Comprar";
 import { Loader } from "./components/Loader";
+import { Gracias } from "./components/Gracias";
 
 function App() {
   const {
@@ -51,6 +52,7 @@ function App() {
           <Route exact  path="comprar" element={<Comprar />} />
           <Route exact  path="categoria/:idCategoria" element={<Categoria />} />
           <Route exact  path="producto/:token" element={<Producto />} />
+          <Route exact  path="gracias" element={<Gracias />} />
           <Route  path="*" element={<NotFound />} />
         </Routes>
   </>  

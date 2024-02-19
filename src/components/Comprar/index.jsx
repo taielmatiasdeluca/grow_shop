@@ -6,8 +6,11 @@ import { useCart } from "react-use-cart";
 //Context
 import { GrowContext } from '../growContext';
 import { useContext, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Comprar(){
+
+    const navigate = useNavigate();
     const {
         apiUrl,
         closeLoader,
@@ -47,7 +50,10 @@ function Comprar(){
             body:JSON.stringify(formData)
         }).then(response=>{
             response.json().then(data=>{
-                console.log(data);
+                
+                if(data.errno === 400){
+                    navigate('/gracias')
+                }
             })
         })
     }

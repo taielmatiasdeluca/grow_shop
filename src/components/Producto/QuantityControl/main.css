@@ -4,6 +4,7 @@
     border-radius: 15px;
     width: fit-content;
     align-items: center;
+    background-color: white;
     & .button{
         padding: 1rem;
 

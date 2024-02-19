@@ -13,7 +13,7 @@ root.render(
   
     <GrowProvider>
       <CartProvider>
-        <BrowserRouter basename="grow/" >
+        <BrowserRouter basename="/grow/" >
           <App />
         </BrowserRouter>  
       </CartProvider>

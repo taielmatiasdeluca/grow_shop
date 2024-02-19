@@ -1,0 +1,9 @@
+#gracias{
+    text-align: center;
+    padding:5%;
+}
+@media (min-width: 600px) {
+    #gracias{
+        padding:5% 25%;
+    }
+}   

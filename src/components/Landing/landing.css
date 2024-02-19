@@ -1,8 +1,16 @@
 #slider_container{
 }
-
+#landing{
+    padding-bottom: 5%;
+}
 .carousel-indicators{
     display: none;
+}
+#landing_products{
+    & h2{
+        padding:1rem;
+        color:black;
+    }
 }
 .subtitle{
     font-family: Inter;
@@ -17,6 +25,16 @@
 
 
     }
+
+    & .carousel-item{
+
+
+        & .image_slider_portade{
+
+            
+            width:auto !important;
+        }
+    }
     
 }   
 #slider_container{
@@ -30,8 +48,7 @@
         & .image_slider_portade{
             display: flex;
             height:100%;
-            
-            width:auto !important;
+            width:100%;
         }
     }
 

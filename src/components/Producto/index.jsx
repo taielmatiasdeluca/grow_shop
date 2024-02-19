@@ -64,6 +64,7 @@ function Producto(){
                     )}
                 </div>
             </div>
+            
            
 
             <div className="info">
@@ -73,7 +74,10 @@ function Producto(){
                 <div className="price">
                     ${data?.info.precio}
                 </div>
-           
+                <div className="description">
+                {data?.info.descripcion}
+                </div>
+
                 <div className="controls">
                     <QuantityControl value={quantity} setValue={setQuantity} />
                     <button onClick={()=>{
@@ -97,10 +101,9 @@ function Producto(){
                         Agregar al Carrito
                     </button >
                 </div>
-                <div className="description">
-                {data?.info.descripcion}
-                </div>
             </div>
+
+                
         </div>
     </PhotoProvider>
 }
