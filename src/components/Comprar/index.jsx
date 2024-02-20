@@ -16,6 +16,8 @@ function Comprar(){
         closeLoader,
     } = useContext(GrowContext);
 
+    const [loading, setLoading] = useState(false);
+
 
     const {
         totalUniqueItems,
@@ -45,6 +47,7 @@ function Comprar(){
 
     function handleSubmit(e){
         e.preventDefault();
+        setLoading(true);
         fetch(`${apiUrl}/pedido/new`,{
             method:'PUT',
             body:JSON.stringify(formData)
@@ -54,6 +57,7 @@ function Comprar(){
                 if(data.errno === 400){
                     navigate('/gracias')
                 }
+                setLoading(false);
             })
         })
     }
@@ -108,7 +112,7 @@ function Comprar(){
             <h5>¿Esta seguro que quiere continuar?</h5>
             <div className="buttons_container">
                 <Button variant="danger">Cancelar</Button>
-                <Button variant="success" onClick={handleSubmit} className='btn_comprar'>Continuar</Button>
+                <Button variant="success" disabled={loading} onClick={handleSubmit} className='btn_comprar'>{loading? "Generando Compra..." : "Continuar"}</Button>
             </div>
         </div>
 

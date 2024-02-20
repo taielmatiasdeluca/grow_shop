@@ -17,7 +17,6 @@ function Landing(props){
 
   const {data:productos_portada} = useFetch(`${apiUrl}producto/getPortade`);
   const {data:productos_destacados} = useFetch(`${apiUrl}producto/get`);
-  console.log(productos_portada);
 
   if(productos_portada && productos_destacados){
     closeLoader();

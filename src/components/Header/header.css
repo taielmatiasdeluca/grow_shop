@@ -17,3 +17,20 @@ header{
         color:white;
     }
 }
+
+@media (min-width: 600px) {
+    header{
+        height:80px;
+
+        & svg{
+            height:40px;
+            width:40px;
+        }
+
+        & #logo{
+            
+            font-size: 30px;
+        }
+    }
+    
+}

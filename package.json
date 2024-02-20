@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://d.taieldeluca.com.ar:81/grow/",
   "dependencies": {
+    "@emotion/react": "^11.11.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,6 +12,7 @@
     "embla-carousel": "^8.0.0-rc21",
     "framer-motion": "^11.0.3",
     "mdb-react-ui-kit": "^7.2.0",
+    "react-awesome-reveal": "^4.2.8",
     "react-bootstrap": "^2.10.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",

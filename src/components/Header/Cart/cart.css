@@ -1,12 +1,17 @@
+#cart_wrapper{
+    position: sticky;
+    top:0;
+    z-index: 999999999;
+}
+
 #cart{
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
-    height:100%;
-    width:100%;
-    background-color: #F2F2F2;
+    height:100vh;
+    width:100vw;
+    background-color: #ebfef7;
 
-    z-index: 999;
 
 
 
