@@ -20,7 +20,7 @@ function Gracias(){
     closeLoader();
     return <div id="gracias">
         <h1>Gracias</h1>
-        <p>Muchas gracias por nosotros,
+        <p>Muchas gracias por confiar nosotros,
              uno de nuestros empleados se contactara con usted, 
              en su correo electronico se encuentra mas informacion al respecto y medios de contacto.
         </p>

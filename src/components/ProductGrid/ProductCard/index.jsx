@@ -17,6 +17,7 @@ function ProductCard({product}){
     <div className='product_card' onClick={()=>{navigate(`/producto/${product.token}`)}}>
         <div className="image_container">
             <img src={`${apiUrl}${product.img}`} alt="" />
+            {product.stock == '0' && (<div className="product__nostock">Sin Stock</div>)}
         </div>
         <div className="info">
             <div className="title">{product.titulo}</div>

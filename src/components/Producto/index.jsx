@@ -68,6 +68,7 @@ function Producto(){
            
 
             <div className="info">
+                {data?.info.stock == '0' && <div className="info__nostock">Sin Stock</div>}
                 <div className="title">
                     {data?.info.titulo}
                 </div>
@@ -78,29 +79,42 @@ function Producto(){
                 {data?.info.descripcion}
                 </div>
 
-                <div className="controls">
-                    <QuantityControl value={quantity} setValue={setQuantity} />
-                    <button onClick={()=>{
-                        if(!inCart(data.info.token)){
-                            addItem({
-                                id:data.info.token,
-                                name:data.info.titulo,
-                                price:data.info.precio,
-                                img:data.info.img,
-                            },quantity);
+                
+                    {data?.info.stock == '0' ? (
+                       
+                         <div className="controls">
+                         <QuantityControl value={quantity} setValue={setQuantity} />
+                         <button className="disabled" disabled>
+                             Agregar al Carrito
+                         </button >
+                         </div>
+                    ):(
+                        <div className="controls">
+                        <QuantityControl value={quantity} setValue={setQuantity} />
+                        <button onClick={()=>{
+                            if(!inCart(data.info.token)){
+                                addItem({
+                                    id:data.info.token,
+                                    name:data.info.titulo,
+                                    price:data.info.precio,
+                                    img:data.info.img,
+                                },quantity);
+                                openCart();
+                                return;
+                            }
+                            let resp = getItem(data.info.token).quantity;
+                            updateItemQuantity(data.info.token,resp+quantity)
+                           
+    
+                           
                             openCart();
-                            return;
-                        }
-                        let resp = getItem(data.info.token).quantity;
-                        updateItemQuantity(data.info.token,resp+quantity)
-                       
-
-                       
-                        openCart();
-                    }}>
-                        Agregar al Carrito
-                    </button >
-                </div>
+                        }}>
+                            Agregar al Carrito
+                        </button >
+                        </div>
+                    
+                    )}
+                   
             </div>
 
                 

@@ -30,11 +30,7 @@ function Menu(props){
             <div className="closeContaner">
                 <IoMdClose onClick={closeMenu} />
             </div>
-            <div className="searcher_container">
-                <input type="text" placeholder='Buscar...' />
-            </div>
             <div className="categoria_list">
-                <h4>Categorias</h4>
                 {categorias?.map(categoria=>(<div className="categoria" key={categoria.idCategoria} onClick={()=>{
                     navigate(`/categoria/${categoria.idCategoria}`)
                     closeMenu();

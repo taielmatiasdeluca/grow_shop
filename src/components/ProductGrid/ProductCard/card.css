@@ -5,8 +5,21 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
+    position: relative;
     overflow: hidden;
     border-radius: 10px;
+
+    & .product__nostock{
+        position: absolute;
+        padding:.5rem 1rem;
+        border-radius: 15px;
+        background-color: rgb(252, 84, 84);
+        right: 1rem;
+        top:1rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color:aliceblue;
+
+    }
 
 
     &:hover{

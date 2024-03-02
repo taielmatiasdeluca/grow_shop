@@ -28,6 +28,20 @@
 
     & .info{
         padding:1rem;
+        position: relative;
+
+        & .info__nostock{
+            position: absolute;
+            padding:.5rem 1rem;
+            border-radius: 15px;
+            background-color: rgb(252, 84, 84);
+            font-size: 25px;
+            right: 1rem;
+            top:-30px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            color:aliceblue;
+
+        }
 
         & .title{
             font-size: 2.3rem;
@@ -60,6 +74,15 @@
             align-items: center;
             font-size: 1.3rem;
             cursor: pointer;
+
+            &.disabled{
+                background-color: #04554e50;
+
+                &:hover{
+                    opacity: 1;
+                }
+
+            }
 
             &:hover{
                 opacity: 0.8;
